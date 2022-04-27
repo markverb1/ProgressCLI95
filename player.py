@@ -192,16 +192,11 @@ def spawnPopup(startLevel, systemLabel):
         print('<', systemLabel, '>')
     rprint(aptable)
     popupinput = input()
-    if popupinput == "OK":
-        clear()
-    elif popupinput == "ok":
-	    clear()
-    elif popupinput == "oK":
-        clear()
-    elif popupinput == "Ok":
+    popupinput = popupinput.lower()
+    if popupinput == "ok":
         clear()
     else:
-        spawnPopup(startLevel, systemLabel)
+        spawnPopup(startLevel, systemLabel) 
 
 def startGame(systemName, startLevel, proLevel):
     global progressbar # total progressbar progress
@@ -468,7 +463,7 @@ def startGame(systemName, startLevel, proLevel):
                 print(lang.gamePerfect + "\n+1000" + lang.gamePoints)
                 game_score += 1000
             elif progressbar3 == 100:
-                print (lang.magicPink = "\n+1000" + lang.gamePoints)
+                print (lang.magicPink == "\n+1000" + lang.gamePoints)
                 game_score += 1000
             if progressbar > 100:
                 print(lang.gameOuterSpace + "\n+2000" + lang.gamePoints)
